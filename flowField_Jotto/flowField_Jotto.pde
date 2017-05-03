@@ -1,19 +1,36 @@
-float scale = 10;
+flowField FlowField;
+ArrayList<Vehicle> vehicles;
 
 
 void setup() {
   size(1000, 1000);
   background(255);
 
+  FlowField = new flowField(20);
+  vehicles = new ArrayList<Vehicle>();
 
-  for (int i = 0; i < width/scale; i++) {
-    for (int j = 0; j < height/scale; j++) {
-      stroke(255,0,255);
-      //line(random(i*scale, i * scale + 10), random(j*scale, j * scale + 10), random(i*scale, i * scale + 10), random(j*scale, j * scale + 10));
-      line(noise(i * scale),noise(j * scale), noise(i * scale + 10), noise(j * scale + 10));
-    }
+  for (int i = 0; i < 111; i++){
+   
+    vehicles.add(new Vehicle(new PVector(random(width), random(height)), random(10,20), random(0.1,5)));
+    
+    
   }
+
+
 }
 
 void draw() {
+  background(255);
+  FlowField.display();
+  
+  for (Vehicle v : vehicles) {
+   
+      v.follow(FlowField);
+      v.run();
+    
+    
+  }
+  
+  
+  
 }
