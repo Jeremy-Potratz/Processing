@@ -44,7 +44,7 @@ class Vehicle {
 
   void display() {
     float theta = velocity.heading() + (PI/2); 
-    fill(177);
+    fill(255,0,0);
     stroke(0);
     pushMatrix();
     translate(position.x, position.y);

@@ -2,14 +2,17 @@ Racecar r;
 
 
 void setup() {
- size(1000,1000);
- background(255);
+ size(500,500);
   r= new Racecar(new PVector(200,200));
 }
 
 void draw(){
-  
-  r.show();  
+   background(255);
+      r.borders();
+
+    r.update();
+    r.show();
+
   
 }
 
