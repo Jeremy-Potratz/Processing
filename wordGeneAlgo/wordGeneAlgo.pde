@@ -31,7 +31,8 @@ Element element;
 void setup() {
   size(640, 360);
   f = createFont("Arial", 32, true);
-  target = "Scott loves the word solution and is taking AP chem next year because of this";
+  target = "Hello Github, this is my word algorithm";
+  //target = "Scott loves the word solution and is taking AP chem next year because of this";
   popmax = 2000;
   mutationRate = 0.01;
 
