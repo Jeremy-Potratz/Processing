@@ -15,14 +15,24 @@ class Walker {
   
   void step() {
     
-    int toMouse = (int)random(1);
+    int toMouse = (int)random(2); //<>//
     
     if (toMouse == 0){
       PVector point = new PVector(x,y);
       PVector mouse = new PVector(mouseX,mouseY);
       
-      x += (point.sub(mouse)).x;
-      y += (point.sub(mouse)).y;
+      if(point.x - mouse.x > 0){
+       x--; 
+      }
+      if(point.x - mouse.x < 0){
+       x++; 
+      }
+      if (point.y - mouse.y > 0){
+       y--; 
+      }
+      if (point.y - mouse.y < 0){
+       y++;
+      }
       
     } else {
       int random = (int)random(3);
